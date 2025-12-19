@@ -1,5 +1,6 @@
 import requests
 import os
+import time
 from datetime import datetime, timezone
 
 # --- 1. CONFIGURACIÓN (¡REEMPLAZA ESTO!) ---
@@ -10,8 +11,6 @@ CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 # URL base de la API de Telegram para enviar mensajes
 TELEGRAM_URL = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
-
-print(TOKEN, CHAT_ID, TELEGRAM_URL)
 
 # # --- 2. Mensaje Personalizable con formato Markdown ---
 # def obtener_mensaje_recordatorio(nombre="preciosa"):
