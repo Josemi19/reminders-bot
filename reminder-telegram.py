@@ -11,6 +11,8 @@ CHAT_ID = os.getenv("TELEGRAM_CHAT_ID") or os.environ.get("TELEGRAM_CHAT_ID")
 # URL base de la API de Telegram para enviar mensajes
 TELEGRAM_URL = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
 
+print(TOKEN, CHAT_ID, TELEGRAM_URL)
+
 # # --- 2. Mensaje Personalizable con formato Markdown ---
 # def obtener_mensaje_recordatorio(nombre="preciosa"):
 #     """
@@ -26,17 +28,13 @@ TELEGRAM_URL = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
 
 # --- 3. La Función de Envío ---
 def enviar_telegram(mensaje):
-    token = TOKEN
-    chat_id = CHAT_ID
-    url = f"https://api.telegram.org/bot{token}/sendMessage"
-    
     payload = {
-        "chat_id": chat_id,
+        "chat_id": CHAT_ID,
         "text": mensaje,
         "parse_mode": "Markdown"
     }
     try:
-        response = requests.post(url, data=payload)
+        response = requests.post(TELEGRAM_URL, data=payload)
         
         if response.status_code == 200:
             print(f"✅ Recordatorio enviado exitosamente a las {time.strftime('%H:%M:%S')}")
