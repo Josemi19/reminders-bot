@@ -1,0 +1,24 @@
+name: Recordatorios
+on:
+  schedule:
+    - cron: "55 11 * * *" # 07:55 AM VET
+    - cron: "55 16 * * *" # 12:55 PM VET
+    - cron: "55 22 * * *" # 06:55 PM VET
+  workflow_dispatch: # Para probarlo manualmente con un clic
+
+jobs:
+  enviar_mensaje:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      - name: Instalar dependencias
+        run: pip install requests
+      - name: Ejecutar script
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python reminder-telegram.py
