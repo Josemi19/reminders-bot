@@ -2,9 +2,6 @@ import requests
 import os
 from datetime import datetime, timezone
 
-# Cargar variables desde un archivo .env (si existe)
-load_dotenv()
-
 # --- 1. CONFIGURACIÓN (¡REEMPLAZA ESTO!) ---
 # Pega aquí el Token que te dio BotFather
 TOKEN = os.getenv("TELEGRAM_BOT_TOKEN") or os.environ.get("TELEGRAM_BOT_TOKEN")
