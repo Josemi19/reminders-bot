@@ -4,9 +4,9 @@ from datetime import datetime, timezone
 
 # --- 1. CONFIGURACIÓN (¡REEMPLAZA ESTO!) ---
 # Pega aquí el Token que te dio BotFather
-TOKEN = os.getenv("TELEGRAM_BOT_TOKEN") or os.environ.get("TELEGRAM_BOT_TOKEN")
+TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 # Pega aquí el ID del chat que obtuviste
-CHAT_ID = os.getenv("TELEGRAM_CHAT_ID") or os.environ.get("TELEGRAM_CHAT_ID")
+CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 # URL base de la API de Telegram para enviar mensajes
 TELEGRAM_URL = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
