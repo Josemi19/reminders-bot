@@ -1,7 +1,5 @@
 import requests
-import time
 import os
-from dotenv import load_dotenv
 from datetime import datetime, timezone
 
 # Cargar variables desde un archivo .env (si existe)
