@@ -83,7 +83,7 @@ def decidir_mensaje():
 
 if __name__ == "__main__":
     # Evitar que el script falle si los secretos no están configurados
-    if not os.environ.get("TELEGRAM_TOKEN") or not os.environ.get("TELEGRAM_CHAT_ID"):
+    if not os.environ.get("TELEGRAM_BOT_TOKEN") or not os.environ.get("TELEGRAM_CHAT_ID"):
         print("❌ Error: TELEGRAM_TOKEN o TELEGRAM_CHAT_ID no configurados en los secretos de GitHub.")
     else:
         mensaje = decidir_mensaje()
